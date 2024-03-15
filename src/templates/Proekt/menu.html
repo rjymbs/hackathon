@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Window</title>
+    <link rel="stylesheet" href="main_proekt.css">
+</head>
+<body style="background-color: rgb(0, 0, 0);">
+
+    <div class="icon-container">
+        <div class="icon" onclick="openPopup(1)">
+            <img src="icon.png" alt="Icon">
+        </div>
+
+        <div class="icon" onclick="openPopup(2)">
+            <img src="icon1.png" alt="Icon1">
+        </div>
+        <div class="icon" onclick="openPopup(3)">
+            <img src="icon2.png" alt="Icon1">
+        </div>
+        <div class="icon" onclick="openPopup(4)">
+            <img src="icon3.png" alt="Icon1">
+        </div>
+    </div>
+
+    <div class="popup" id="popup1">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup(1)">&times;</span>
+            <h2>Головные уборы</h2>
+            <div class="products" id="products1">
+                <!-- Product images and prices will be inserted here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="popup2">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup(2)">&times;</span>
+            <h2>Верхняя одежда</h2>
+            <div class="products" id="products2">
+                <!-- Product images and prices will be inserted here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="popup3">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup(3)">&times;</span>
+            <h2>Канцтовары</h2>
+            <div class="products" id="products3">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="popup4">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup(4)">&times;</span>
+            <h2>Кружки</h2>
+            <div class="products" id="products4">
+
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
+

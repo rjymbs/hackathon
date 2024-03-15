@@ -1,0 +1,108 @@
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    }
+    
+    .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(11, 25, 54);
+    }
+    
+    .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    }
+    
+    .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+    
+    .product {
+    margin: 10px;
+    width: calc(20% - 20px); /* Расчет ширины элемента с учетом отступов */
+    margin: 10px; /* Отступы между элементами */
+    }
+    
+    .product img {
+    display: block; /* Делаем изображение блочным элементом */
+    margin: 0 auto; 
+    width: 150px; /* Фиксированная ширина для всех изображений */
+    height: 150px;
+    }
+    
+    .product p {
+    margin-top: 5px;
+    }
+    button {
+        width: 150px; /* Изменяем ширину кнопки */
+        height: 40px; /* Изменяем высоту кнопки */
+        border-radius: 10px; /* Добавляем скругление углов */
+        color: white; /* Изменяем цвет текста кнопки */
+        background-color: #e100ff; /* Изменяем цвет фона кнопки */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Добавляем тень кнопке */
+        margin: 5px; /* Добавляем небольшие отступы вокруг кнопки */
+    }
+    h2{
+        text-align: center; /* Выравнивание текста по центру */
+        color: #e100ff; /* Изменение цвета текста */
+        font-weight: bold; /* Полужирный шрифт */
+        text-transform: uppercase; /* Преобразование текста в верхний регистр */
+        letter-spacing: 1px; /* Расстояние между буквами */
+    }
+    .icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Выравнивание по вертикали */
+    }
+    
+    .icon {
+        display: inline-block;
+        margin: 0 auto;
+        text-align: center;
+        margin: 0 5px;
+    }
+    .icon img {
+       width: 100px; /* Измените размеры, если необходимо */
+       height: auto;
+       display: block;
+       margin: 0 auto;
+       border: 2px solid black; /* Добавляем рамку вокруг иконки */
+       background-color: rgb(247, 0, 255); /* Заливаем внутреннюю часть цветом */
+       padding: 5px; /* Добавляем внутренние отступы для контента */
+       border-radius: 10px;
+       transition: transform 0.7s ease; /* Добавляем плавное изменение при трансформации */
+   }
+    .icon img:hover {
+        transform: scale(1.1); /* Увеличиваем размер при наведении */
+   }
+   .close {
+    background-color: red; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем границу кнопки */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    cursor: pointer; /* Изменяем курсор при наведении на кнопку */
+    border-radius: 5px; /* Скругляем углы кнопки */
+}
+
+.close:hover {
+    background-color: darkred; /* Изменяем цвет фона при наведении на кнопку */
+}
+
+  
