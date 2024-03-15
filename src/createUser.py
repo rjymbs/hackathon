@@ -1,6 +1,6 @@
 import re
 import bcrypt
-from db_connection import DBConnection
+from db_conection import DBConnection
 
 class SignUp:
     def __init__(self):
