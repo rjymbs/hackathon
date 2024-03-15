@@ -5,7 +5,8 @@ from sql_db import db_start, create_profile, edit_profile
 db_start()
 
 app = Flask(__name__)
-
+conn = sqlite3.connect('my_db.db')
+cur = conn.cursor()
 # Проверяем подключение к базе данных
 def check_db_connection():
     if os.path.exists('my_db.db'):
@@ -19,12 +20,13 @@ def check_db_connection():
 def form():
     if not check_db_connection():
         return "Ошибка: База данных не подключена."
-    return render_template('form.html')
+    return render_template('index.html')
 
 
 # Обработка данных из формы и сохранение в базе данных
-@app.route('/register', methods=['POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
+
     if not check_db_connection():
         return "Ошибка: База данных не подключена."
 
@@ -58,6 +60,11 @@ def register():
 
 
         return redirect('/')  # Перенаправляем на главную страницу
+    return render_template('form.html')
+# Обработка данных из формы и проверка входа пользователя
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    return render_template('login.html')
 
 
 if __name__ == '__main__':
