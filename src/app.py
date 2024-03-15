@@ -18,10 +18,13 @@ def check_db_connection():
 # Главная страница с формой
 @app.route('/')
 def form():
+    return render_template('index.html')
+
+@app.route('/main')
+def main():
     if not check_db_connection():
         return "Ошибка: База данных не подключена."
     return render_template('index.html')
-
 
 # Обработка данных из формы и сохранение в базе данных
 @app.route('/register', methods=['GET', 'POST'])
@@ -56,10 +59,7 @@ def register():
 
         create_profile(user_id)
         edit_profile(date, user_id)
-
-
-
-        return redirect('/')  # Перенаправляем на главную страницу
+        return render_template('index.html')
     return render_template('form.html')
 # Обработка данных из формы и проверка входа пользователя
 @app.route('/login', methods=['GET', 'POST'])
