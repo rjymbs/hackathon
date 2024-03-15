@@ -21,6 +21,11 @@ def form():
         return "Ошибка: База данных не подключена."
     return render_template('form.html')
 
+@app.route('/main')
+def main():
+    if not check_db_connection():
+        return "Ошибка: База данных не подключена."
+    return render_template('index.html')
 
 # Обработка данных из формы и сохранение в базе данных
 @app.route('/register', methods=['POST'])
@@ -57,7 +62,7 @@ def register():
 
 
 
-        return redirect('/')  # Перенаправляем на главную страницу
+        return render_template('index.html')  # Перенаправляем на главную страницу
 
 
 if __name__ == '__main__':
