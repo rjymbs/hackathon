@@ -5,31 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Профиль сотрудника</title>
     <link rel="stylesheet" href="style.css">
+  <style>
+        body {
+        background: #222222;
+        color: #ff0f83;
+        text-align: center;
+        margin-top:130px;
 
-   
+    }
+
+    .inf {
+        text-align: center;
+    }
+
+    .h2{
+      margin-top:35px;
+      color: red;
+      text-align: left;
+    }
+  </style>
+
   </head>
   <body>
   <div class="modern">
     <header>
-      <h2>ФИО Сотрудника: |{{ full_name }}</h2>
-      <h3>Должность:      |{{ job_title }}</h3>
-      <h3>Почта:          |{{ email }}</h3>
+      <h1>ФИО Сотрудника: {{ full_name }}</h1>
+      <h2>Должность:      {{ job_title }}</h2>
+      <h2>Почта:          {{ email }}</h2>
     </header>
 
       <main>
         <article>
           <section>
-            <p>Бонусные баллы: |{{ points }}</p>
+            <h2>Бонусные баллы: {{ points }}</h2>
           </section>
 
 
         </article>
       </main>
       <footer>
-        <p>Cсылки на другие страницы</p>
-        <a href="/Profile_menu" class="voiti">Перейти на меню профиля</a>
+  <form action="/menuT" method="post" autocomplete="off" class="bgc">
+        <h2>Cсылки на другие страницы</h2>
         <a href="/tasks" class="voiti">Заработать баллы</a>
+        <a href="/items" >Перейти в магазин</a>
+        </form>
+
       </footer>
   </div>
+
   </body>
 </html>
