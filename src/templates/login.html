@@ -13,7 +13,7 @@
 <p class="description">
   Здравствуйте! Мы рады  приветствовать <i>Вас</i> !  <br>  Пожалуйста, введите данные своей учетной записи.
 </p>
-<form>
+<form action="/login_check" method="post" autocomplete="off" class="form">
   <div class="action">
     <a class="sign-in active" href="#">Войти</a>
   </div>
@@ -21,17 +21,18 @@
     <p>
       Введи имя
     </p>
-    <input type="text" placeholder="login">
+    <input type="text" placeholder="login" name="login">
     <p>
       Введи пароль
     </p>
-    <input type="password" placeholder="password">
+    <input type="password" placeholder="password" name="password">
   </div>
   <div class="save">
     <input type="checkbox">
     <p>Сохранить</p>
   </div>
-  <input type="button" value="Войти" class="button">
+   <input type="submit" value="Войти" class="button">
+<!--   <a href="/login_check" class="voiti">Войти</a>-->
   <hr>
 
 </form>

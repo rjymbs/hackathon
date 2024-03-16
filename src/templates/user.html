@@ -9,22 +9,24 @@
    
   </head>
   <body>
-    <header>
-      <h2>ФИО</h2>
-      <h3>Должность</h3>
-      <h3>Email</h3>
-    </header>
+  <header>
+    <h2>{{ full_name }}</h2>
+    <h3>{{ job_title }}</h3>
+    <h3>{{ email }}</h3>
+  </header>
+
     <main>
       <article>
         <section>
-          <p>Бонусные баллы:</p>
+          <p>Бонусные баллы: {{ points }}</p>
         </section>
+
         
       </article>
     </main>
     <footer>
       <p>Cсылки на другие страницы</p>
     </footer>
-    
+
   </body>
 </html>
