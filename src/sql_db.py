@@ -47,3 +47,20 @@ def edit_challenge(data, challenge_id):
                 'ChallengeType="{}" WHERE challenge_id =="{}"'.format(
         data['ChallengeName'],data['Reward'],data['ChallengeDescription'],data['ChallengeType'], challenge_id))
     db.commit()
+
+def check_profile(emaill, password):
+    a = cur.execute(f"SELECT emaill, password FROM profile WHERE emaill = '{emaill}' AND password = '{password}'")
+    db.commit()
+    if not cur.fetchone():
+        return 0
+    return 1
+
+def get_profile(email):
+    profile_data = cur.execute(
+        'SELECT FullName, emaill, JobTitle, points FROM profile WHERE emaill = ?',
+        (email,)
+    ).fetchone()
+    db.commit()
+    if profile_data:
+        return profile_data
+    return None
