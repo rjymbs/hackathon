@@ -64,3 +64,19 @@ def get_profile(email):
     if profile_data:
         return profile_data
     return None
+
+def get_points(email):
+    profile_data = cur.execute(
+        'SELECT points FROM profile WHERE emaill = ?',
+        (email,)
+    ).fetchone()
+    db.commit()
+    if profile_data:
+        return profile_data
+    return None
+def add_points_n(count_points):
+    file = open('templates/Proekt/data.txt', 'r')
+    email = file.read()
+    file.close()
+    count_points += int(get_points(email)[0])
+    cur.execute('UPDATE profile set points = "{}" WHERE emaill == "{}"'.format(count_points, email))
