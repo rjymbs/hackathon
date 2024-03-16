@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+body {
+    background: #222222;
+}
+
+table {
+ margin: 50px auto;
+ width: 80%;
+ border-collapse: collapse;
+    box-shadow: 3px 3px 3px #ff0f83;
+    border-radius: 12px;
+}
+
+
+caption {
+ margin-bottom: 20px;
+ font-size: 45px;
+ color: #ff0f83;
+ text-shadow: 2px 2px 2px gray;
+}
+
+tr {
+  background: #222222;
+
+}
+td {
+ padding-top: 30px;
+ padding-left: 10px;
+ padding-right: 10px;
+ padding-bottom: 10px;
+ border-bottom: 1px solid #ff0f83;
+ border-right: 1px solid #ff0f83;
+ border-left: 1px solid #ff0f83;
+    color: white;
+}
+th {
+ padding-top: 30px;
+ padding-left: 10px;
+ padding-right: 10px;
+ padding-bottom: 10px;
+ border-top-left-radius: 15px;
+ border-top-right-radius: 15px;
+ height: 150px;
+    text-shadow: 1px 1px 2px black;
+    font-size: 22px;
+
+}
+.basic {
+ background-color: #ff0f83;
+ color: #ffffff;
+}
+.pro {
+ background-color: #4f1631;
+ color: #ffffff;
+}
+.gold {
+ background-color: #ff0f83;
+ color: #ffffff
+}
+.platinum {
+ background-color: #4f1631;
+ color: #ffffff;
+}
+.price-text {
+ display: inline;
+ padding: 15px;
+ margin: 0 auto;
+ box-shadow: 1px 4px 8px gray;
+ border-radius: 3px;
+ font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #ff0f83;
+}
+.price-wrapper {
+ height: 90px;
+ padding:0;
+    text-align: center;
+}
+.pricebutton {
+ margin: 20px;
+ font-size: 18px;
+ border: 1px solid black;
+ width: 250px;
+ display: inline-block;
+ padding: 20px 5px;
+ border-radius: 45px;
+ text-decoration: none;
+ box-shadow: 1px 3px 4px gray;
+ text-shadow: 1px 1px 2px black;
+    text-align: center;
+}
+.gray-bg {
+ background-color:#f5f5f5;
+}
