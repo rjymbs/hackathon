@@ -101,5 +101,10 @@ def Profile_menu():
 def menu():
     return render_template('menu.html')
 
+@app.route('/tasks', methods=['GET', 'POST'])
+def tasks():
+    return render_template('tasks.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
