@@ -56,15 +56,20 @@ def register():
 
         create_profile(user_id)
         edit_profile(date, user_id)
+        return render_template('index.html')
 
 
-
-        return redirect('/')  # Перенаправляем на главную страницу
+        #return redirect('/')  # Перенаправляем на главную страницу
     return render_template('form.html')
 # Обработка данных из формы и проверка входа пользователя
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     return render_template('login.html')
+
+@app.route('/user', methods=['GET', 'POST'])
+def user():
+    return render_template('user.html')
 
 
 if __name__ == '__main__':
