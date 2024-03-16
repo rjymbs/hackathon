@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import sqlite3
 import os
-from sql_db import db_start, create_profile, edit_profile, check_profile, get_profile
-
+from sql_db import db_start, create_profile, edit_profile, check_profile, get_profile, add_points_n
 db_start()
 
 app = Flask(__name__)
@@ -80,6 +79,9 @@ def login_check():
         email = request.form['login']
         password = request.form['password']
         if (check_profile(email, password)):
+            file = open('templates/Proekt/data.txt', 'w')
+            file.write(email)
+            file.close()
             profile = get_profile(email)
             full_name, email, job_title, points = profile
             return render_template('user.html', full_name=full_name, email=email, job_title=job_title, points=points)
@@ -100,6 +102,35 @@ def Profile_menu():
 @app.route('/menu', methods=['GET', 'POST'])
 def menu():
     return render_template('menu.html')
+
+@app.route('/tasks', methods=['GET', 'POST'])
+def tasks():
+    return render_template('tasks.html')
+@app.route('/reward_points100', methods=['GET', 'POST'])
+def reward_points100():
+    add_points_n(100)
+    return open_profile()
+
+@app.route('/reward_points300', methods=['GET', 'POST'])
+def reward_points300():
+    add_points_n(300)
+    return open_profile()
+
+@app.route('/reward_points500', methods=['GET', 'POST'])
+def reward_points500():
+    add_points_n(500)
+    return open_profile()
+
+@app.route('/reward_points700', methods=['GET', 'POST'])
+def reward_points700():
+    add_points_n(700)
+    return open_profile()
+def open_profile():
+    file = open('templates/Proekt/data.txt', 'r')
+    email = file.read()
+    profile = get_profile(email)
+    full_name, email, job_title, points = profile
+    return render_template('user.html', full_name=full_name, email=email, job_title=job_title, points=points)
 
 if __name__ == '__main__':
     app.run(debug=True)
