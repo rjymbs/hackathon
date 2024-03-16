@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash
 import sqlite3
 import os
-from sql_db import db_start, create_profile, edit_profile, check_profile, get_profile, add_points_n
+from sql_db import db_start, create_profile, edit_profile, check_profile, get_profile, add_points_n, buy_thing
+
 db_start()
 
 app = Flask(__name__)
@@ -63,7 +64,7 @@ def register():
 
         create_profile(user_id)
         edit_profile(date, user_id)
-        return render_template('index.html')
+        return render_template('login.html')
     return render_template('form.html')
 # Обработка данных из формы и проверка входа пользователя
 
@@ -99,13 +100,14 @@ def user():
 def Profile_menu():
     return render_template('profile.html')
 
-@app.route('/menu', methods=['GET', 'POST'])
-def menu():
-    return render_template('menu.html')
+@app.route('/items', methods=['GET', 'POST'])
+def items():
+    return render_template('items.html')
 
 @app.route('/tasks', methods=['GET', 'POST'])
 def tasks():
     return render_template('tasks.html')
+
 @app.route('/reward_points100', methods=['GET', 'POST'])
 def reward_points100():
     add_points_n(100)
@@ -131,7 +133,42 @@ def open_profile():
     profile = get_profile(email)
     full_name, email, job_title, points = profile
     return render_template('user.html', full_name=full_name, email=email, job_title=job_title, points=points)
+def open_profile2(x):
+    file = open('templates/Proekt/data.txt', 'r')
+    email = file.read()
+    profile = get_profile(email)
+    full_name, email, job_title, points = profile
+    return render_template('user.html', full_name=full_name, email=email, job_title=job_title, points="На вашему счету: " + points + " вам не хватает: "+ str(abs(int(points)-x)))
 
+@app.route('/spend_points1000', methods=['GET', 'POST'])
+def spend_points1000():
+    if(buy_thing(1000)):
+        return open_profile()
+    else:
+        return open_profile2(1000)
+
+
+@app.route('/spend_points1200', methods=['GET', 'POST'])
+def spend_points1200():
+    if(buy_thing(1200)):
+        return open_profile()
+    else:
+        return open_profile2(1200)
+
+
+@app.route('/spend_points1400', methods=['GET', 'POST'])
+def spend_points1400():
+    if(buy_thing(1400)):
+        return open_profile()
+    else:
+        return open_profile2(1400)
+
+@app.route('/spend_points1600', methods=['GET', 'POST'])
+def spend_points1600():
+    if(buy_thing(1600)):
+        return open_profile()
+    else:
+        return open_profile2(1600)
 
 if __name__ == '__main__':
     app.run(debug=True)

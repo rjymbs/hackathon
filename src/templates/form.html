@@ -39,8 +39,9 @@
                     <option value="hr менеджер">hr менеджер</option>
                 </select>
             </div>
-            <textarea name="comment" id="comment" placeholder="Дополнительная информация" class="comment"></textarea>
-
+<!--            <textarea name="comment" id="comment" placeholder="Введите кол-во баллов, назначенное при оформление договора" class="comment"></textarea>-->
+            <label for="comment">Введите кол-во баллов, назначенное при оформление договора:</label>
+            <input type="number" id="comment" name="comment" min="0" max="100" step="1" required>
             <button class="submit">Отправить</button>
         </div>
     </form>

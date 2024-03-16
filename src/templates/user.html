@@ -24,20 +24,20 @@
       text-align: left;
     }
   </style>
-   
+
   </head>
   <body>
   <div class="modern">
     <header>
-      <h1>ФИО Сотрудника: |{{ full_name }}</h1>
-      <h2>Должность:      |{{ job_title }}</h2>
-      <h2>Почта:          |{{ email }}</h2>
+      <h1>ФИО Сотрудника: {{ full_name }}</h1>
+      <h2>Должность:      {{ job_title }}</h2>
+      <h2>Почта:          {{ email }}</h2>
     </header>
 
       <main>
         <article>
           <section>
-            <h2>Бонусные баллы: |{{ points }}</h2>
+            <h2>Бонусные баллы: {{ points }}</h2>
           </section>
 
 
@@ -47,7 +47,7 @@
   <form action="/menuT" method="post" autocomplete="off" class="bgc">
         <h2>Cсылки на другие страницы</h2>
         <a href="/tasks" class="voiti">Заработать баллы</a>
-        <a href="/menu" >Перейти в магазин</a>
+        <a href="/items" >Перейти в магазин</a>
         </form>
 
       </footer>

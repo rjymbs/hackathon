@@ -80,3 +80,13 @@ def add_points_n(count_points):
     file.close()
     count_points += int(get_points(email)[0])
     cur.execute('UPDATE profile set points = "{}" WHERE emaill == "{}"'.format(count_points, email))
+
+def buy_thing(count_points):
+    file = open('templates/Proekt/data.txt', 'r')
+    email = file.read()
+    file.close()
+    if(int(get_points(email)[0]) - count_points >= 0):
+        cur.execute('UPDATE profile set points = "{}" WHERE emaill == "{}"'.format((int(get_points(email)[0]) - count_points), email))
+        return 1
+    else:
+        return 0
