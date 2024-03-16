@@ -67,9 +67,11 @@ def register():
         return render_template('index.html')
     return render_template('form.html')
 # Обработка данных из формы и проверка входа пользователя
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     return render_template('login.html')
+
 @app.route('/login_check', methods=['GET', 'POST'])
 def login_check():
     if not check_db_connection():
@@ -91,7 +93,13 @@ def user():
 
     return render_template('user.html')
 
+@app.route('/Profile_menu', methods=['GET', 'POST'])
+def Profile_menu():
+    return render_template('profile.html')
 
+@app.route('/menu', methods=['GET', 'POST'])
+def menu():
+    return render_template('menu.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
